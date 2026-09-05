@@ -2,6 +2,8 @@
 
 Code, experiment configurations and results for the paper of the same name.
 
+**Preprint:** [https://ssrn.com/abstract=7417408](https://ssrn.com/abstract=7417408)
+
 Low-rank compression by truncated SVD becomes competitive when the rank budget
 is allocated across layers by measured sensitivity. Existing formulations
 assume a single homogeneous transformer stack, which vision-language models do
@@ -179,11 +181,15 @@ lockfile and can silently reinstall over the pinned CUDA build.
 
 ## Citation
 
+If you use this work, please cite the preprint:
+
 ```bibtex
 @article{pham2026structure,
-  title  = {Structure-Aware Global Rank Allocation for Low-Rank Compression of Dual-Tower Vision-Language Models},
-  author = {Pham, Van Tien and Le, Thanh Trung},
-  year   = {2026}
+  title   = {Structure-Aware Global Rank Allocation for Low-Rank Compression of Dual-Tower Vision-Language Models},
+  author  = {Pham, Van Tien and Le, Thanh Trung},
+  year    = {2026},
+  note    = {SSRN preprint},
+  url     = {https://ssrn.com/abstract=7417408}
 }
 ```
 
