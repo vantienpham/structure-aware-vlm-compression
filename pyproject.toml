@@ -1,0 +1,51 @@
+[project]
+name = "vlm-lems"
+version = "0.1.0"
+description = "Tower-aware KFAC-SVD + LEMS: extending label-free SVD compression to vision-language models."
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    # Capped per cluster.local.md: an unconstrained resolve pulls a +cu130 torch
+    # that fails on the 560.35.05 (P5000/V100) partitions. setup_remote.sh
+    # force-installs the exact pinned build (torch==2.6.0+cu124) after `uv sync`;
+    # this cap only stops the lockfile drifting back to something newer.
+    "torch<2.7",
+    # Imported at load time by some VLM processors (e.g. Qwen2-VL video).
+    "torchvision<0.22",
+    # Matches lems/docker/requirements.txt so our process and the imported
+    # lems package agree on the transformers API surface (LlavaForConditionalGeneration,
+    # AutoProcessor, etc. all need >=4.45; pin exactly for reproducibility).
+    "transformers==4.55.0",
+    "accelerate>=0.34",
+    "datasets>=2.20",
+    "pillow>=10.0",
+    # lems/docker/requirements.txt pins 0.1.99, but that version has no
+    # prebuilt wheel for the Python uv resolves here (3.12) and its source
+    # build fails (build_bundled.sh needs a toolchain we don't have on the
+    # login node). Any recent release is tokenizer-compatible; only the
+    # version with wheels matters here.
+    "sentencepiece>=0.2.0",
+    "safetensors==0.5.3",
+    "numpy==1.*",
+    "tqdm",
+    # Needed because vlm_lems imports lems's compression.search.lems module
+    # (LEMSSearch, the ILP solver) directly rather than reimplementing it.
+    "gurobipy",
+    "pulp",
+    # HiGHS: open-source MIP solver, reached through PuLP. The rank-allocation
+    # ILP is too large for a size-limited Gurobi licence and too large for CBC
+    # at a useful rank granularity.
+    "highspy",
+    "optuna",
+    # lems/all_utils/compression_utils.py imports matplotlib at module scope
+    # (for its plot_compression_rates helper), so importing anything from
+    # lems's compression package needs it present even headless.
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.uv]
+package = false

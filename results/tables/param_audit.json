@@ -1,0 +1,1154 @@
+{
+  "13b-flat-0.6": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.5999722207878244,
+    "final_parameters": 8147679744,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 114,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.5905141480501033,
+        "parameters_saved": 5195462144,
+        "retained_parameters": 7492307456
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999348958333333,
+        "parameters_saved": 2048,
+        "retained_parameters": 31455232
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.971145408740942,
+        "parameters_saved": 8350720,
+        "retained_parameters": 281056256
+      }
+    },
+    "retained_eligible_parameters": 7804818944,
+    "run": "13b-flat-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.6102447668912133
+  },
+  "13b-flat-0.8": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.7999589727248911,
+    "final_parameters": 10749234176,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 135,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.795320974302686,
+        "parameters_saved": 2596920320,
+        "retained_parameters": 10090849280
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999348958333333,
+        "parameters_saved": 2048,
+        "retained_parameters": 31455232
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9815549988677537,
+        "parameters_saved": 5338112,
+        "retained_parameters": 284068864
+      }
+    },
+    "retained_eligible_parameters": 10406373376,
+    "run": "13b-flat-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.8050959426605788
+  },
+  "13b-tower-0.6": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.599970489014892,
+    "final_parameters": 8147657216,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 116,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.5902426475335744,
+        "parameters_saved": 5198906880,
+        "retained_parameters": 7488862720
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999348958333333,
+        "parameters_saved": 2048,
+        "retained_parameters": 31455232
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9829703068387681,
+        "parameters_saved": 4928512,
+        "retained_parameters": 284478464
+      }
+    },
+    "retained_eligible_parameters": 7804796416,
+    "run": "13b-tower-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.6102430795894856
+  },
+  "13b-tower-0.8": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.7999622788368531,
+    "final_parameters": 10749277184,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 136,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.7951669034090909,
+        "parameters_saved": 2598875136,
+        "retained_parameters": 10088894464
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999348958333333,
+        "parameters_saved": 2048,
+        "retained_parameters": 31455232
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9884581634963768,
+        "parameters_saved": 3340288,
+        "retained_parameters": 286066688
+      }
+    },
+    "retained_eligible_parameters": 10406416384,
+    "run": "13b-tower-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.805099163872968
+  },
+  "13b-uniform-0.6": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.6000530237385137,
+    "final_parameters": 8148730880,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.6000484245867769,
+        "parameters_saved": 5074493440,
+        "retained_parameters": 7613276160
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.6,
+        "parameters_saved": 12582912,
+        "retained_parameters": 18874368
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.6002604166666666,
+        "parameters_saved": 115687424,
+        "retained_parameters": 173719552
+      }
+    },
+    "retained_eligible_parameters": 7805870080,
+    "run": "13b-uniform-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.6103234948559155
+  },
+  "13b-uniform-0.8": {
+    "eligible_dense_parameters": 13008633856,
+    "eligible_retention": 0.8000041562550378,
+    "final_parameters": 10749821952,
+    "fixed_parameters": 342860800,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-13b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 12687769600,
+        "layers": 280,
+        "parameter_weighted_retention": 0.8000048424586776,
+        "parameters_saved": 2537492480,
+        "retained_parameters": 10150277120
+      },
+      "projector": {
+        "dense_parameters": 31457280,
+        "layers": 2,
+        "parameter_weighted_retention": 0.8000651041666667,
+        "parameters_saved": 6289408,
+        "retained_parameters": 25167872
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.7999674479166666,
+        "parameters_saved": 57890816,
+        "retained_parameters": 231516160
+      }
+    },
+    "retained_eligible_parameters": 10406961152,
+    "run": "13b-uniform-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 13351494656,
+    "whole_model_retention": 0.8051399658965642
+  },
+  "qwen-flat-0.6": {
+    "eligible_dense_parameters": 7198998528,
+    "eligible_retention": 0.5999548808353361,
+    "final_parameters": 5411451392,
+    "fixed_parameters": 1092377088,
+    "layers_kept_dense_by_threshold": 162,
+    "model": "Qwen/Qwen2-VL-7B-Instruct",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6525288448,
+        "layers": 196,
+        "parameter_weighted_retention": 0.5732605480676523,
+        "parameters_saved": 2784598016,
+        "retained_parameters": 3740690432
+      },
+      "projector": {
+        "dense_parameters": 44564480,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999540441176471,
+        "parameters_saved": 2048,
+        "retained_parameters": 44562432
+      },
+      "vision": {
+        "dense_parameters": 629145600,
+        "layers": 128,
+        "parameter_weighted_retention": 0.848486328125,
+        "parameters_saved": 95324160,
+        "retained_parameters": 533821440
+      }
+    },
+    "retained_eligible_parameters": 4319074304,
+    "run": "qwen-flat-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 8291375616,
+    "whole_model_retention": 0.6526602632206694
+  },
+  "qwen-flat-0.8": {
+    "eligible_dense_parameters": 7198998528,
+    "eligible_retention": 0.8000060310611026,
+    "final_parameters": 6851619328,
+    "fixed_parameters": 1092377088,
+    "layers_kept_dense_by_threshold": 226,
+    "model": "Qwen/Qwen2-VL-7B-Instruct",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6525288448,
+        "layers": 196,
+        "parameter_weighted_retention": 0.7871884666760405,
+        "parameters_saved": 1388656640,
+        "retained_parameters": 5136631808
+      },
+      "projector": {
+        "dense_parameters": 44564480,
+        "layers": 2,
+        "parameter_weighted_retention": 0.9999540441176471,
+        "parameters_saved": 2048,
+        "retained_parameters": 44562432
+      },
+      "vision": {
+        "dense_parameters": 629145600,
+        "layers": 128,
+        "parameter_weighted_retention": 0.9187825520833334,
+        "parameters_saved": 51097600,
+        "retained_parameters": 578048000
+      }
+    },
+    "retained_eligible_parameters": 5759242240,
+    "run": "qwen-flat-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 8291375616,
+    "whole_model_retention": 0.8263549554766667
+  },
+  "qwen-uniform-0.6": {
+    "eligible_dense_parameters": 7198998528,
+    "eligible_retention": 0.5998960637653848,
+    "final_parameters": 5411027968,
+    "fixed_parameters": 1092377088,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "Qwen/Qwen2-VL-7B-Instruct",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6525288448,
+        "layers": 196,
+        "parameter_weighted_retention": 0.5999103627671541,
+        "parameters_saved": 2610700288,
+        "retained_parameters": 3914588160
+      },
+      "projector": {
+        "dense_parameters": 44564480,
+        "layers": 2,
+        "parameter_weighted_retention": 0.6000114889705882,
+        "parameters_saved": 17825280,
+        "retained_parameters": 26739200
+      },
+      "vision": {
+        "dense_parameters": 629145600,
+        "layers": 128,
+        "parameter_weighted_retention": 0.5997395833333333,
+        "parameters_saved": 251822080,
+        "retained_parameters": 377323520
+      }
+    },
+    "retained_eligible_parameters": 4318650880,
+    "run": "qwen-uniform-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 8291375616,
+    "whole_model_retention": 0.6526091952170461
+  },
+  "qwen-uniform-0.8": {
+    "eligible_dense_parameters": 7198998528,
+    "eligible_retention": 0.7999843391550142,
+    "final_parameters": 6851463168,
+    "fixed_parameters": 1092377088,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "Qwen/Qwen2-VL-7B-Instruct",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6525288448,
+        "layers": 196,
+        "parameter_weighted_retention": 0.7999947272215973,
+        "parameters_saved": 1305092096,
+        "retained_parameters": 5220196352
+      },
+      "projector": {
+        "dense_parameters": 44564480,
+        "layers": 2,
+        "parameter_weighted_retention": 0.8000804227941176,
+        "parameters_saved": 8909312,
+        "retained_parameters": 35655168
+      },
+      "vision": {
+        "dense_parameters": 629145600,
+        "layers": 128,
+        "parameter_weighted_retention": 0.7998697916666667,
+        "parameters_saved": 125911040,
+        "retained_parameters": 503234560
+      }
+    },
+    "retained_eligible_parameters": 5759086080,
+    "run": "qwen-uniform-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 8291375616,
+    "whole_model_retention": 0.8263361214487283
+  },
+  "seed-flat-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.5999564228600124,
+    "final_parameters": 4348577792,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 104,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.5873530096340673,
+        "parameters_saved": 2672304128,
+        "retained_parameters": 3803701248
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.643701171875,
+        "parameters_saved": 7472128,
+        "retained_parameters": 13499392
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.8788107167119565,
+        "parameters_saved": 35073024,
+        "retained_parameters": 254333952
+      }
+    },
+    "retained_eligible_parameters": 4071534592,
+    "run": "seed-flat-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6156470149225602
+  },
+  "seed-flat-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7999521828405053,
+    "final_parameters": 5705825792,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 129,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7940556027110994,
+        "parameters_saved": 1333697024,
+        "retained_parameters": 5142308352
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9174061650815217,
+        "parameters_saved": 23903232,
+        "retained_parameters": 265503744
+      }
+    },
+    "retained_eligible_parameters": 5428782592,
+    "run": "seed-flat-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077984997705091
+  },
+  "seed-tower-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.5999582712670929,
+    "final_parameters": 4348590336,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 100,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.5889168773908071,
+        "parameters_saved": 2662176512,
+        "retained_parameters": 3813828864
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.562451171875,
+        "parameters_saved": 9176064,
+        "retained_parameters": 11795456
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.849747367527174,
+        "parameters_saved": 43484160,
+        "retained_parameters": 245922816
+      }
+    },
+    "retained_eligible_parameters": 4071547136,
+    "run": "seed-tower-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6156487908310353
+  },
+  "seed-tower-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7999479579100356,
+    "final_parameters": 5705797120,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 129,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7935919885190658,
+        "parameters_saved": 1336699392,
+        "retained_parameters": 5139305984
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9276813009510869,
+        "parameters_saved": 20929536,
+        "retained_parameters": 268477440
+      }
+    },
+    "retained_eligible_parameters": 5428753920,
+    "run": "seed-tower-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077944405511376
+  },
+  "seed-uniform-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.600014364763597,
+    "final_parameters": 4348971008,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.6000027829501295,
+        "parameters_saved": 2590384128,
+        "retained_parameters": 3885621248
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.6001953125,
+        "parameters_saved": 8384512,
+        "retained_parameters": 12587008
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.6002604166666666,
+        "parameters_saved": 115687424,
+        "retained_parameters": 173719552
+      }
+    },
+    "retained_eligible_parameters": 4071927808,
+    "run": "seed-uniform-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6157026842167983
+  },
+  "seed-uniform-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7998983904222033,
+    "final_parameters": 5705460736,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7998957658678757,
+        "parameters_saved": 1295876096,
+        "retained_parameters": 5180129280
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.799755859375,
+        "parameters_saved": 4199424,
+        "retained_parameters": 16772096
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.7999674479166666,
+        "parameters_saved": 57890816,
+        "retained_parameters": 231516160
+      }
+    },
+    "retained_eligible_parameters": 5428417536,
+    "run": "seed-uniform-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077468172095824
+  },
+  "tower_lems-coupled-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.5999470676568294,
+    "final_parameters": 4348514304,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 110,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.5849765915944787,
+        "parameters_saved": 2687693824,
+        "retained_parameters": 3788311552
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.693701171875,
+        "parameters_saved": 6423552,
+        "retained_parameters": 14547968
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9281448143115942,
+        "parameters_saved": 20795392,
+        "retained_parameters": 268611584
+      }
+    },
+    "retained_eligible_parameters": 4071471104,
+    "run": "tower_lems-coupled-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6156380266510947
+  },
+  "tower_lems-coupled-0.7": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.6999563398703067,
+    "final_parameters": 5027215616,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 121,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.6870704216042949,
+        "parameters_saved": 2026533632,
+        "retained_parameters": 4449471744
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9665633491847826,
+        "parameters_saved": 9676800,
+        "retained_parameters": 279730176
+      }
+    },
+    "retained_eligible_parameters": 4750172416,
+    "run": "tower_lems-coupled-0.7",
+    "target_ratio": 0.7,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.7117247144701603
+  },
+  "tower_lems-coupled-0.9": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.8999453097839732,
+    "final_parameters": 6384417536,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 143,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.8959136725707375,
+        "parameters_saved": 674063616,
+        "retained_parameters": 5801941760
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9829136945199275,
+        "parameters_saved": 4944896,
+        "retained_parameters": 284462080
+      }
+    },
+    "retained_eligible_parameters": 6107374336,
+    "run": "tower_lems-coupled-0.9",
+    "target_ratio": 0.9,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.9038696755726906
+  },
+  "tower_lems-coupled-t60-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7999473166259464,
+    "final_parameters": 5705792768,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 135,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7921312164148518,
+        "parameters_saved": 1346159360,
+        "retained_parameters": 5129846016
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.621826171875,
+        "parameters_saved": 7930880,
+        "retained_parameters": 13040640
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9877540477807971,
+        "parameters_saved": 3544064,
+        "retained_parameters": 285862912
+      }
+    },
+    "retained_eligible_parameters": 5428749568,
+    "run": "tower_lems-coupled-t60-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077938244196259
+  },
+  "tower_lems-flat-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.5999564228600124,
+    "final_parameters": 4348577792,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 104,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.5873530096340673,
+        "parameters_saved": 2672304128,
+        "retained_parameters": 3803701248
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.643701171875,
+        "parameters_saved": 7472128,
+        "retained_parameters": 13499392
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.8788107167119565,
+        "parameters_saved": 35073024,
+        "retained_parameters": 254333952
+      }
+    },
+    "retained_eligible_parameters": 4071534592,
+    "run": "tower_lems-flat-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6156470149225602
+  },
+  "tower_lems-flat-0.7": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.6999560003669654,
+    "final_parameters": 5027213312,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 117,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.6902125857654631,
+        "parameters_saved": 2006184960,
+        "retained_parameters": 4469820416
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.8962437726449275,
+        "parameters_saved": 30027776,
+        "retained_parameters": 259379200
+      }
+    },
+    "retained_eligible_parameters": 4750170112,
+    "run": "tower_lems-flat-0.7",
+    "target_ratio": 0.7,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.7117243882828893
+  },
+  "tower_lems-flat-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7999521828405053,
+    "final_parameters": 5705825792,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 129,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7940556027110994,
+        "parameters_saved": 1333697024,
+        "retained_parameters": 5142308352
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9174061650815217,
+        "parameters_saved": 23903232,
+        "retained_parameters": 265503744
+      }
+    },
+    "retained_eligible_parameters": 5428782592,
+    "run": "tower_lems-flat-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077984997705091
+  },
+  "tower_lems-flat-0.9": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.8999452720613798,
+    "final_parameters": 6384417280,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 139,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.898118646651352,
+        "parameters_saved": 659784192,
+        "retained_parameters": 5816221184
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9335725203804348,
+        "parameters_saved": 19224576,
+        "retained_parameters": 270182400
+      }
+    },
+    "retained_eligible_parameters": 6107374080,
+    "run": "tower_lems-flat-0.9",
+    "target_ratio": 0.9,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.9038696393296605
+  },
+  "tower_lems-tower-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.5999582712670929,
+    "final_parameters": 4348590336,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 100,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.5889168773908071,
+        "parameters_saved": 2662176512,
+        "retained_parameters": 3813828864
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.562451171875,
+        "parameters_saved": 9176064,
+        "retained_parameters": 11795456
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.849747367527174,
+        "parameters_saved": 43484160,
+        "retained_parameters": 245922816
+      }
+    },
+    "retained_eligible_parameters": 4071547136,
+    "run": "tower_lems-tower-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6156487908310353
+  },
+  "tower_lems-tower-0.7": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.6999570565995828,
+    "final_parameters": 5027220480,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 117,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.6894316203853627,
+        "parameters_saved": 2011242496,
+        "retained_parameters": 4464762880
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9137440557065217,
+        "parameters_saved": 24963072,
+        "retained_parameters": 264443904
+      }
+    },
+    "retained_eligible_parameters": 4750177280,
+    "run": "tower_lems-tower-0.7",
+    "target_ratio": 0.7,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.7117254030877322
+  },
+  "tower_lems-tower-0.9": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.8999462905714037,
+    "final_parameters": 6384424192,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 139,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.897649142408618,
+        "parameters_saved": 662824704,
+        "retained_parameters": 5813180672
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9441024116847826,
+        "parameters_saved": 16177152,
+        "retained_parameters": 273229824
+      }
+    },
+    "retained_eligible_parameters": 6107380992,
+    "run": "tower_lems-tower-0.9",
+    "target_ratio": 0.9,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.9038706178914733
+  },
+  "tower_lems-tower-t60-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7999529372923748,
+    "final_parameters": 5705830912,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 129,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7935764925467536,
+        "parameters_saved": 1336799744,
+        "retained_parameters": 5139205632
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.999951171875,
+        "parameters_saved": 1024,
+        "retained_parameters": 20970496
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.9281448143115942,
+        "parameters_saved": 20795392,
+        "retained_parameters": 268611584
+      }
+    },
+    "retained_eligible_parameters": 5428787712,
+    "run": "tower_lems-tower-t60-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077992246311112
+  },
+  "uniform-0.6": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.600014364763597,
+    "final_parameters": 4348971008,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.6000027829501295,
+        "parameters_saved": 2590384128,
+        "retained_parameters": 3885621248
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.6001953125,
+        "parameters_saved": 8384512,
+        "retained_parameters": 12587008
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.6002604166666666,
+        "parameters_saved": 115687424,
+        "retained_parameters": 173719552
+      }
+    },
+    "retained_eligible_parameters": 4071927808,
+    "run": "uniform-0.6",
+    "target_ratio": 0.6,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.6157026842167983
+  },
+  "uniform-0.7": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7001094558772404,
+    "final_parameters": 5028254720,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7001421834520726,
+        "parameters_saved": 1941880832,
+        "retained_parameters": 4534124544
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.700048828125,
+        "parameters_saved": 6290432,
+        "retained_parameters": 14681088
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.6993815104166666,
+        "parameters_saved": 87001088,
+        "retained_parameters": 202405888
+      }
+    },
+    "retained_eligible_parameters": 4751211520,
+    "run": "uniform-0.7",
+    "target_ratio": 0.7,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.7118718249293479
+  },
+  "uniform-0.8": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.7998983904222033,
+    "final_parameters": 5705460736,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.7998957658678757,
+        "parameters_saved": 1295876096,
+        "retained_parameters": 5180129280
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.799755859375,
+        "parameters_saved": 4199424,
+        "retained_parameters": 16772096
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.7999674479166666,
+        "parameters_saved": 57890816,
+        "retained_parameters": 231516160
+      }
+    },
+    "retained_eligible_parameters": 5428417536,
+    "run": "uniform-0.8",
+    "target_ratio": 0.8,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.8077468172095824
+  },
+  "uniform-0.9": {
+    "eligible_dense_parameters": 6786383872,
+    "eligible_retention": 0.9000289407737175,
+    "final_parameters": 6384985088,
+    "fixed_parameters": 277043200,
+    "layers_kept_dense_by_threshold": 0,
+    "model": "llava-hf/llava-1.5-7b-hf",
+    "per_tower": {
+      "language": {
+        "dense_parameters": 6476005376,
+        "layers": 224,
+        "parameter_weighted_retention": 0.9000351663698186,
+        "parameters_saved": 647372800,
+        "retained_parameters": 5828632576
+      },
+      "projector": {
+        "dense_parameters": 20971520,
+        "layers": 2,
+        "parameter_weighted_retention": 0.899853515625,
+        "parameters_saved": 2100224,
+        "retained_parameters": 18871296
+      },
+      "vision": {
+        "dense_parameters": 289406976,
+        "layers": 138,
+        "parameter_weighted_retention": 0.89990234375,
+        "parameters_saved": 28968960,
+        "retained_parameters": 260438016
+      }
+    },
+    "retained_eligible_parameters": 6107941888,
+    "run": "uniform-0.9",
+    "target_ratio": 0.9,
+    "total_parameters": 7063427072,
+    "whole_model_retention": 0.9039500263704286
+  }
+}

@@ -1,0 +1,349 @@
+#!/usr/bin/env python3
+"""Emit the manuscript's result tables as LaTeX, straight from the run JSON.
+
+    uv run --no-sync python scripts/make_tables.py --runs out/runs --out results/tables
+
+The manuscript \\input's these files rather than restating their numbers, so
+there is no transcription step between what the experiments produced and what
+the paper claims.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import os
+from glob import glob
+
+from analyze import mcnemar_exact  # same directory
+
+
+AUDIT: dict = {}
+
+
+def load_audit(path: str) -> None:
+    """Parameter-weighted tower retention, from scripts/param_audit.py.
+
+    The unweighted mean of per-layer ratios is not the retention of a tower:
+    its layers differ in size by orders of magnitude, so the mean does not
+    reconcile with the global budget. Where an audit is available the tables
+    use its parameter-weighted figures instead.
+    """
+    global AUDIT
+    if os.path.exists(path):
+        AUDIT = json.load(open(path))
+
+
+MISSING_AUDITS: set = set()
+
+
+def towers_of(run: dict, record_missing: bool = True) -> dict:
+    """Parameter-weighted tower retention for a run.
+
+    Falls back to the unweighted per-layer mean only when no audit exists, and
+    records that it did: mixing the two definitions within one table is a
+    silent error, so the caller reports any fallback rather than shipping it.
+    """
+    entry = AUDIT.get(run["_name"])
+    if entry:
+        return {t: v["parameter_weighted_retention"]
+                for t, v in entry["per_tower"].items()}
+    if record_missing:
+        MISSING_AUDITS.add(run["_name"])
+    return run.get("mean_ratio_by_tower") or {}
+
+
+#: Allocation rules that belong in the per-model tables. Everything else is a
+#: competing rule and belongs only in the baselines table.
+CANONICAL_SEARCHES = (None, "uniform", "tower_lems")
+
+
+def load(runs_dir: str, benchmark: str, model_tag: str,
+         canonical_only: bool = True) -> list[dict]:
+    """Runs for one (benchmark, model) pair.
+
+    ``canonical_only`` keeps the default configuration: the answer-free
+    calibration ablation and the competing allocation rules each have their own
+    table, and letting them through here silently produced duplicate rows and
+    rows labelled by a missing bias mode.
+    """
+    out = []
+    for path in sorted(glob(os.path.join(runs_dir, "*", "result.json"))):
+        record = json.load(open(path))
+        name = os.path.basename(os.path.dirname(path))
+        if record.get("benchmark", "scienceqa") != benchmark:
+            continue
+        model_id = record.get("model", "")
+        if model_tag == "13b":
+            keep = "13b" in model_id
+        elif model_tag == "qwen":
+            keep = "Qwen" in model_id
+        else:
+            keep = "llava" in model_id.lower() and "13b" not in model_id
+        if not keep:
+            continue
+        if record.get("eval", {}).get("n", 0) < 500:
+            continue
+        if canonical_only:
+            if record.get("calib_includes_answer") is False:
+                continue
+            if record.get("search") not in CANONICAL_SEARCHES:
+                continue
+        record["_name"] = name
+        preds = os.path.join(os.path.dirname(path), "predictions.json")
+        record["_preds"] = json.load(open(preds)) if os.path.exists(preds) else None
+        out.append(record)
+    return out
+
+
+def method_of(run: dict) -> str:
+    if run.get("search") is None:
+        return "fp16"
+    if run.get("search") == "uniform":
+        return "uniform"
+    return run.get("bias_mode") or "?"
+
+
+LABEL = {
+    "fp16": "Uncompressed",
+    "uniform": "Uniform",
+    "flat": "Sensitivity ILP",
+    "tower": "\\;+ per-tower bias",
+    "coupled": "\\;+ coupling",
+}
+ORDER = ["uniform", "flat", "tower", "coupled"]
+
+
+def stars(p: float | None) -> str:
+    if p is None:
+        return ""
+    if p < 0.001:
+        return "$^{***}$"
+    if p < 0.01:
+        return "$^{**}$"
+    if p < 0.05:
+        return "$^{*}$"
+    return ""
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--runs", default="out/runs")
+    parser.add_argument("--out", default="results/tables")
+    args = parser.parse_args(argv)
+    os.makedirs(args.out, exist_ok=True)
+    load_audit(os.path.join(args.out, "param_audit.json"))
+    written = []
+
+    for benchmark, model_tag, fname in [
+        ("scienceqa", "7b", "main_scienceqa.tex"),
+        ("seedbench", "7b", "main_seedbench.tex"),
+        ("scienceqa", "13b", "main_13b.tex"),
+        ("scienceqa", "qwen", "main_qwen.tex"),
+    ]:
+        runs = load(args.runs, benchmark, model_tag)
+        if not runs:
+            continue
+        fp16 = next((r for r in runs if method_of(r) == "fp16"), None)
+        ratios = sorted({r["ratio"] for r in runs if method_of(r) != "fp16"}, reverse=True)
+
+        lines = [
+            "% Generated by scripts/make_tables.py -- do not edit by hand.",
+            "\\begin{tabular}{llrrrrr}",
+            "\\toprule",
+            "Ratio & Method & Acc.\\ (\\%) & $\\Delta$ & "
+            "Vis. & Lang. & Proj. \\\\",
+            "\\midrule",
+        ]
+        if fp16 is not None:
+            acc = fp16["eval"]["accuracy"] * 100
+            lines.append(f"-- & {LABEL['fp16']} & {acc:.2f} & -- & -- & -- & -- \\\\")
+            lines.append("\\midrule")
+
+        for ratio in ratios:
+            group = [r for r in runs if r["ratio"] == ratio and method_of(r) != "fp16"]
+            # One row per method. Where the same configuration was run at
+            # several search budgets, report the largest -- the fairest test of
+            # the variant -- and prefer a run with per-example predictions so
+            # the significance marker can be computed.
+            best: dict[str, dict] = {}
+            for run in group:
+                key = method_of(run)
+                trials = (run.get("bias_params") or {}).get("n_trials", 0) or 0
+                incumbent = best.get(key)
+                if incumbent is None:
+                    best[key] = run
+                    continue
+                inc_trials = (incumbent.get("bias_params") or {}).get("n_trials", 0) or 0
+                if (bool(run["_preds"]), trials) > (bool(incumbent["_preds"]), inc_trials):
+                    best[key] = run
+            group = sorted(best.values(),
+                           key=lambda r: ORDER.index(method_of(r))
+                           if method_of(r) in ORDER else 99)
+            uniform = next((r for r in group if method_of(r) == "uniform"), None)
+            for position, run in enumerate(group):
+                acc = run["eval"]["accuracy"] * 100
+                towers = towers_of(run)
+                delta, mark = "--", ""
+                if uniform is not None and run is not uniform:
+                    diff = acc - uniform["eval"]["accuracy"] * 100
+                    delta = f"{diff:+.2f}"
+                    if run["_preds"] and uniform["_preds"]:
+                        _, _, p = mcnemar_exact(uniform["_preds"], run["_preds"])
+                        mark = stars(p)
+                cells = " & ".join(
+                    f"{towers[k]:.3f}" if k in towers else "--"
+                    for k in ("vision", "language", "projector")
+                )
+                prefix = f"{ratio:.1f}" if position == 0 else ""
+                lines.append(
+                    f"{prefix} & {LABEL.get(method_of(run), method_of(run))} & "
+                    f"{acc:.2f} & {delta}{mark} & {cells} \\\\"
+                )
+            if ratio != ratios[-1]:
+                lines.append("\\midrule")
+
+        lines += ["\\bottomrule", "\\end{tabular}"]
+        path = os.path.join(args.out, fname)
+        with open(path, "w") as f:
+            f.write("\n".join(lines) + "\n")
+        written.append((path, len(runs)))
+
+    # Competing allocation rules. Keyed on *realized* whole-model retention,
+    # because not every rule honours the requested budget on a VLM: reporting
+    # them at their target would compare models of different sizes.
+    rule_label = {"vlm_asvd": "ASVD threshold", "vlm_mrcs": "MRCS greedy",
+                  "vlm_atp": "ATP", "vlm_svdllmv2": "SVD-LLMv2",
+                  "uniform": "Uniform", "tower_lems": "Sensitivity ILP (ours)"}
+    baseline_runs = [r for r in load(args.runs, "scienceqa", "7b",
+                                     canonical_only=False)
+                     if r.get("search") in rule_label
+                     and r.get("calib_includes_answer") is not False
+                     and (r.get("search") != "tower_lems"
+                          or r.get("bias_mode") == "flat")]
+    if baseline_runs:
+        rows = ["% Generated by scripts/make_tables.py -- do not edit by hand.",
+                "\\begin{tabular}{llrrr}", "\\toprule",
+                "Target & Allocation rule & Realized & Acc.\\ (\\%) & "
+                "$\\Delta$ vs uniform \\\\", "\\midrule"]
+        for target in (0.8, 0.6):
+            group = [r for r in baseline_runs if abs(r["ratio"] - target) < 1e-9]
+            uni = next((r for r in group
+                        if r.get("search") == "uniform"), None)
+            def sort_key(r):
+                return (r.get("search") != "uniform",
+                        r.get("search") == "tower_lems",
+                        r.get("search"))
+            first = True
+            for run in sorted(group, key=sort_key):
+                if run.get("search") == "tower_lems" and run.get("bias_mode") != "flat":
+                    continue
+                acc = run["eval"]["accuracy"] * 100
+                realized = run.get("param_ratio_actual", float("nan"))
+                delta = "--"
+                if uni is not None and run is not uni:
+                    d = acc - uni["eval"]["accuracy"] * 100
+                    mark = ""
+                    if run["_preds"] and uni["_preds"]:
+                        _, _, pv = mcnemar_exact(uni["_preds"], run["_preds"])
+                        mark = stars(pv)
+                    delta = f"{d:+.2f}{mark}"
+                # Flag rules that did not deliver the requested budget: their
+                # accuracy is not comparable with the matched-budget rows.
+                # Matched-budget means matching the uniform run's realized
+                # retention, not the nominal target: whole-model retention is
+                # always above target because fixed parameters cannot shrink.
+                reference_ratio = (uni.get("param_ratio_actual")
+                                   if uni is not None else realized)
+                violated = abs(realized - reference_ratio) > 0.01
+                flag = "$^{\\dagger}$" if violated else ""
+                if violated:
+                    delta = "n/c"
+                rows.append(
+                    f"{target if first else '':<4} & {rule_label[run['search']]} & "
+                    f"{realized:.4f}{flag} & {acc:.2f} & {delta} \\\\")
+                first = False
+            if target != 0.6:
+                rows.append("\\midrule")
+        rows += ["\\bottomrule", "\\end{tabular}"]
+        path = os.path.join(args.out, "baselines.tex")
+        with open(path, "w") as f:
+            f.write("\n".join(rows) + "\n")
+        written.append((path, len(baseline_runs)))
+
+    # Parameter accounting, so the budget can be audited independently of the
+    # accuracy tables.
+    if AUDIT:
+        order = ["uniform-0.9", "tower_lems-flat-0.9", "uniform-0.8",
+                 "tower_lems-flat-0.8", "uniform-0.7", "tower_lems-flat-0.7",
+                 "uniform-0.6", "tower_lems-flat-0.6"]
+        rows = ["% Generated by scripts/make_tables.py -- do not edit by hand.",
+                "\\begin{tabular}{llrrrrr}", "\\toprule",
+                "Target & Method & Eligible & Retained & Whole-model & "
+                "Dense & Saved \\\\",
+                " & & (M) & (M) & retention & layers & (M) \\\\", "\\midrule"]
+        for key in order:
+            entry = AUDIT.get(key)
+            if not entry:
+                continue
+            method = "Uniform" if key.startswith("uniform") else "Sensitivity ILP"
+            saved = (entry["eligible_dense_parameters"]
+                     - entry["retained_eligible_parameters"]) / 1e6
+            rows.append(
+                f"{entry['target_ratio']:.1f} & {method} & "
+                f"{entry['eligible_dense_parameters'] / 1e6:.0f} & "
+                f"{entry['retained_eligible_parameters'] / 1e6:.0f} & "
+                f"{entry['whole_model_retention']:.4f} & "
+                f"{entry['layers_kept_dense_by_threshold']} & {saved:.0f} \\\\")
+        rows += ["\\bottomrule", "\\end{tabular}"]
+        path = os.path.join(args.out, "param_accounting.tex")
+        with open(path, "w") as f:
+            f.write("\n".join(rows) + "\n")
+        written.append((path, len(AUDIT)))
+
+    # Machine-readable companion, so every number in the paper is traceable.
+    # This export is deliberately NOT canonical-only. The tables filter to the
+    # default configuration so the answer-free ablation and the competing
+    # allocation rules cannot leak in as duplicate rows, but that filter has no
+    # place in the archival record: applying it here left the label-free
+    # ablation's four accuracies quoted in the paper and present in no
+    # committed file. ``search`` and ``calib_includes_answer`` are recorded so
+    # a consumer can reconstruct the canonical subset.
+    everything = {}
+    for benchmark, model_tag, _ in [("scienceqa", "7b", ""), ("seedbench", "7b", ""),
+                                    ("scienceqa", "13b", ""), ("scienceqa", "qwen", "")]:
+        for run in load(args.runs, benchmark, model_tag, canonical_only=False):
+            everything[f"{model_tag}/{benchmark}/{run['_name']}"] = {
+                "accuracy": run["eval"]["accuracy"],
+                "n": run["eval"]["n"],
+                "n_nonfinite": run["eval"]["n_nonfinite"],
+                "ratio_target": run["ratio"],
+                "ratio_actual": run.get("param_ratio_actual"),
+                "method": method_of(run),
+                "search": run.get("search"),
+                "calib_includes_answer": run.get("calib_includes_answer"),
+                "mean_ratio_by_tower": run.get("mean_ratio_by_tower"),
+                "param_weighted_by_tower": towers_of(run, record_missing=False),
+                "bias_params": (run.get("bias_params") or {}).get("params"),
+            }
+    with open(os.path.join(args.out, "all_results.json"), "w") as f:
+        json.dump(everything, f, indent=2, sort_keys=True)
+
+    if MISSING_AUDITS:
+        print("\nWARNING: no parameter audit for these runs, so their tower "
+              "columns are unweighted means and are not comparable with the "
+              "audited rows:")
+        for name in sorted(MISSING_AUDITS):
+            print(f"  {name}")
+        print("  run scripts/param_audit.py for them and regenerate.")
+
+    for path, n in written:
+        print(f"wrote {path} ({n} runs)")
+    print(f"wrote {os.path.join(args.out, 'all_results.json')} "
+          f"({len(everything)} entries)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

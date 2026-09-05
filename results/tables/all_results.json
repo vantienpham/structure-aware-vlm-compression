@@ -1,0 +1,1163 @@
+{
+  "13b/scienceqa/13b-baseline": {
+    "accuracy": 0.7074863658899355,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": null,
+    "method": "fp16",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {},
+    "ratio_actual": null,
+    "ratio_target": 1.0,
+    "search": null
+  },
+  "13b/scienceqa/13b-flat-0.6": {
+    "accuracy": 0.6856717897868121,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.5572261442719486,
+      "projector": 1.0,
+      "vision": 0.9628093700783917
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5905141480501033,
+      "projector": 0.9999348958333333,
+      "vision": 0.971145408740942
+    },
+    "ratio_actual": 0.6102560201631406,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "13b/scienceqa/13b-flat-0.8": {
+    "accuracy": 0.7030242935052058,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.73100659127409,
+      "projector": 1.0,
+      "vision": 0.9715817219213958
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.795320974302686,
+      "projector": 0.9999348958333333,
+      "vision": 0.9815549988677537
+    },
+    "ratio_actual": 0.8051231043386787,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "13b/scienceqa/13b-tower-0.6": {
+    "accuracy": 0.6846802181457611,
+    "bias_params": {
+      "a_language": 1.4570507958872174,
+      "a_vision": 2.947074589466301,
+      "g_language": 0.033791064853994385,
+      "g_vision": 2.657229703941564
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.5582258049097584,
+      "projector": 1.0,
+      "vision": 0.9714404330572809
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5902426475335744,
+      "projector": 0.9999348958333333,
+      "vision": 0.9829703068387681
+    },
+    "ratio_actual": 0.6102541792456528,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "13b/scienceqa/13b-tower-0.8": {
+    "accuracy": 0.7055032226078334,
+    "bias_params": {
+      "a_language": 2.483060385622808,
+      "a_vision": 2.90230945039618,
+      "g_language": 2.0291464061644984,
+      "g_vision": 2.0392126861627586
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7320954898286938,
+      "projector": 1.0,
+      "vision": 0.9772418478260869
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7951669034090909,
+      "projector": 0.9999348958333333,
+      "vision": 0.9884581634963768
+    },
+    "ratio_actual": 0.8051289331242946,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "13b/scienceqa/13b-uniform-0.6": {
+    "accuracy": 0.601883986117997,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6000484245867769,
+      "projector": 0.6,
+      "vision": 0.6002604166666666
+    },
+    "ratio_actual": 0.6101351620838338,
+    "ratio_target": 0.6,
+    "search": "uniform"
+  },
+  "13b/scienceqa/13b-uniform-0.8": {
+    "accuracy": 0.6618740704015865,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.8000048424586776,
+      "projector": 0.8000651041666667,
+      "vision": 0.7999674479166666
+    },
+    "ratio_actual": 0.8049551611190039,
+    "ratio_target": 0.8,
+    "search": "uniform"
+  },
+  "7b/scienceqa/baseline-full": {
+    "accuracy": 0.6479920674268715,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": null,
+    "method": "fp16",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {},
+    "ratio_actual": null,
+    "ratio_target": 1.0,
+    "search": null
+  },
+  "7b/scienceqa/noans-flat-0.6": {
+    "accuracy": 0.5642042637580565,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": false,
+    "mean_ratio_by_tower": {
+      "language": 0.5728543316470747,
+      "projector": 0.7734375,
+      "vision": 0.8853038567712481
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5728543316470747,
+      "projector": 0.7734375,
+      "vision": 0.8853038567712481
+    },
+    "ratio_actual": 0.6156487847433388,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/noans-flat-0.8": {
+    "accuracy": 0.6182449181953397,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": false,
+    "mean_ratio_by_tower": {
+      "language": 0.7511502943474815,
+      "projector": 1.0,
+      "vision": 0.9177390519102476
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7511502943474815,
+      "projector": 1.0,
+      "vision": 0.9177390519102476
+    },
+    "ratio_actual": 0.8078223670800009,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/noans-uniform-0.6": {
+    "accuracy": 0.504214179474467,
+    "bias_params": null,
+    "calib_includes_answer": false,
+    "mean_ratio_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "ratio_actual": 0.6155190560732953,
+    "ratio_target": 0.6,
+    "search": "uniform"
+  },
+  "7b/scienceqa/noans-uniform-0.8": {
+    "accuracy": 0.5999008428358948,
+    "bias_params": null,
+    "calib_includes_answer": false,
+    "mean_ratio_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "ratio_actual": 0.8077201938724852,
+    "ratio_target": 0.8,
+    "search": "uniform"
+  },
+  "7b/scienceqa/tower_lems-coupled-0.6": {
+    "accuracy": 0.5899851264253843,
+    "bias_params": {
+      "a_language": 0.054489608157341274,
+      "a_vision": 1.9589408558776278,
+      "g_language": 1.1356218929104902,
+      "g_vision": 2.3280924496148536,
+      "k_projector": 1.965777891092222,
+      "k_vision": 2.2190601943006225
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.5652697020724904,
+      "projector": 0.80859375,
+      "vision": 0.9266141215869477
+    },
+    "method": "coupled",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5849765915944787,
+      "projector": 0.693701171875,
+      "vision": 0.9281448143115942
+    },
+    "ratio_actual": 0.6156461724136847,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-coupled-0.7": {
+    "accuracy": 0.6038671294000991,
+    "bias_params": {
+      "a_language": 1.204487669525264,
+      "a_vision": 2.8940991441695925,
+      "g_language": 0.048250795375281944,
+      "g_vision": 3.864183680528633,
+      "k_projector": 2.8688632033346533,
+      "k_vision": 2.956369224713975
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6562815238768246,
+      "projector": 1.0,
+      "vision": 0.9566967603652385
+    },
+    "method": "coupled",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6870704216042949,
+      "projector": 0.999951171875,
+      "vision": 0.9665633491847826
+    },
+    "ratio_actual": 0.7117389088546959,
+    "ratio_target": 0.7,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-coupled-0.8": {
+    "accuracy": 0.6202280614774417,
+    "bias_params": {
+      "a_language": 2.9854306744742294,
+      "a_vision": 0.8714441852406848,
+      "g_language": 0.04543607707031816,
+      "g_vision": 0.6049835820797315,
+      "k_projector": 2.6409726208728737,
+      "k_vision": 2.379106675282889
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7472231939552675,
+      "projector": 1.0,
+      "vision": 0.956654041912194
+    },
+    "method": "coupled",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7472231939552675,
+      "projector": 1.0,
+      "vision": 0.956654041912194
+    },
+    "ratio_actual": 0.807813377817515,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-coupled-0.9": {
+    "accuracy": 0.6445215666831928,
+    "bias_params": {
+      "a_language": 1.1620699183316607,
+      "a_vision": 2.919689023644651,
+      "g_language": 0.07443333372712455,
+      "g_vision": 3.5075717096357897,
+      "k_projector": 2.946467551031203,
+      "k_vision": 2.8674963751975286
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8389692720484865,
+      "projector": 1.0,
+      "vision": 0.9713272084195997
+    },
+    "method": "coupled",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.8959136725707375,
+      "projector": 0.999951171875,
+      "vision": 0.9829136945199275
+    },
+    "ratio_actual": 0.9039182896514515,
+    "ratio_target": 0.9,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-coupled-t60-0.8": {
+    "accuracy": 0.6217154189390184,
+    "bias_params": {
+      "a_language": 1.581149089599624,
+      "a_vision": 0.8615322531839686,
+      "g_language": 0.03632224108950764,
+      "g_vision": 5.313012951378573,
+      "k_projector": 0.5825803744276126,
+      "k_vision": 2.9706768291488364
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7474877935529582,
+      "projector": 0.763671875,
+      "vision": 0.979946520367716
+    },
+    "method": "coupled",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7921312164148518,
+      "projector": 0.621826171875,
+      "vision": 0.9877540477807971
+    },
+    "ratio_actual": 0.8078223650979602,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-flat-0.6": {
+    "accuracy": 0.5765989092711948,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.57179741714525,
+      "projector": 0.77734375,
+      "vision": 0.8838548855532551
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5873530096340673,
+      "projector": 0.643701171875,
+      "vision": 0.8788107167119565
+    },
+    "ratio_actual": 0.6156467545673557,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-flat-0.7": {
+    "accuracy": 0.6068418443232524,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6594023000512234,
+      "projector": 1.0,
+      "vision": 0.901234521818761
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6902125857654631,
+      "projector": 0.999951171875,
+      "vision": 0.8962437726449275
+    },
+    "ratio_actual": 0.7117284725609184,
+    "ratio_target": 0.7,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-flat-0.8": {
+    "accuracy": 0.6246901338621715,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7502109050180217,
+      "projector": 1.0,
+      "vision": 0.9178470231459362
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7940556027110994,
+      "projector": 0.999951171875,
+      "vision": 0.9174061650815217
+    },
+    "ratio_actual": 0.8078185979464445,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-flat-0.9": {
+    "accuracy": 0.6450173525037184,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8405255385465272,
+      "projector": 1.0,
+      "vision": 0.9313665149262976
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.898118646651352,
+      "projector": 0.999951171875,
+      "vision": 0.9335725203804348
+    },
+    "ratio_actual": 0.9039177111787132,
+    "ratio_target": 0.9,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-tower-0.6": {
+    "accuracy": 0.5919682697074864,
+    "bias_params": {
+      "a_language": 0.6150736663320285,
+      "a_vision": 2.1103645984263366,
+      "g_language": 0.9726908733119095,
+      "g_vision": 0.024758606053455923
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.5686504333890434,
+      "projector": 0.7265625,
+      "vision": 0.8566678390047955
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5889168773908071,
+      "projector": 0.562451171875,
+      "vision": 0.849747367527174
+    },
+    "ratio_actual": 0.6156574825042662,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-tower-0.7": {
+    "accuracy": 0.6058502726822013,
+    "bias_params": {
+      "a_language": 1.6212489385426283,
+      "a_vision": 2.8868899264549306,
+      "g_language": 0.1257331293037378,
+      "g_vision": 3.0549981498431227
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6585511320086294,
+      "projector": 1.0,
+      "vision": 0.9155909634849853
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6894316203853627,
+      "projector": 0.999951171875,
+      "vision": 0.9137440557065217
+    },
+    "ratio_actual": 0.7117363010554206,
+    "ratio_target": 0.7,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-tower-0.8": {
+    "accuracy": 0.6266732771442737,
+    "bias_params": {
+      "a_language": 2.9868185827934255,
+      "a_vision": 2.94826310317885,
+      "g_language": 0.033791064853994385,
+      "g_vision": 2.657229703941564
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7496946285089884,
+      "projector": 1.0,
+      "vision": 0.9262973967457663
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7496946285089884,
+      "projector": 1.0,
+      "vision": 0.9262973967457663
+    },
+    "ratio_actual": 0.807814538727073,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-tower-0.9": {
+    "accuracy": 0.6440257808626674,
+    "bias_params": {
+      "a_language": 1.6418034933598464,
+      "a_vision": 2.893997072729438,
+      "g_language": 0.0747707075771693,
+      "g_vision": 2.6587571512631305
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8396332071910894,
+      "projector": 1.0,
+      "vision": 0.9396895626515193
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.897649142408618,
+      "projector": 0.999951171875,
+      "vision": 0.9441024116847826
+    },
+    "ratio_actual": 0.90391655140175,
+    "ratio_target": 0.9,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/tower_lems-tower-t60-0.8": {
+    "accuracy": 0.6266732771442737,
+    "bias_params": {
+      "a_language": 2.736374744644641,
+      "a_vision": 2.997569336808536,
+      "g_language": 0.0011688700971326793,
+      "g_vision": 2.9236428064399678
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7497284892187874,
+      "projector": 1.0,
+      "vision": 0.9266141215869477
+    },
+    "method": "tower",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7935764925467536,
+      "projector": 0.999951171875,
+      "vision": 0.9281448143115942
+    },
+    "ratio_actual": 0.8078200476676487,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/scienceqa/uniform-0.6": {
+    "accuracy": 0.5151214675260287,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6000027829501295,
+      "projector": 0.6001953125,
+      "vision": 0.6002604166666666
+    },
+    "ratio_actual": 0.6155190560732953,
+    "ratio_target": 0.6,
+    "search": "uniform"
+  },
+  "7b/scienceqa/uniform-0.7": {
+    "accuracy": 0.5830441249380268,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7,
+      "projector": 0.7,
+      "vision": 0.7
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7001421834520726,
+      "projector": 0.700048828125,
+      "vision": 0.6993815104166666
+    },
+    "ratio_actual": 0.7115169847116388,
+    "ratio_target": 0.7,
+    "search": "uniform"
+  },
+  "7b/scienceqa/uniform-0.8": {
+    "accuracy": 0.6058502726822013,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7998957658678757,
+      "projector": 0.799755859375,
+      "vision": 0.7999674479166666
+    },
+    "ratio_actual": 0.8077201938724852,
+    "ratio_target": 0.8,
+    "search": "uniform"
+  },
+  "7b/scienceqa/uniform-0.9": {
+    "accuracy": 0.6162617749132375,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.9,
+      "projector": 0.9,
+      "vision": 0.9
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.9000351663698186,
+      "projector": 0.899853515625,
+      "vision": 0.89990234375
+    },
+    "ratio_actual": 0.9037181225108287,
+    "ratio_target": 0.9,
+    "search": "uniform"
+  },
+  "7b/scienceqa/vlm_asvd-0.6": {
+    "accuracy": 0.48785324739712443,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.553125,
+      "projector": 0.6000000000000001,
+      "vision": 0.4231884057971015
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.553125,
+      "projector": 0.6000000000000001,
+      "vision": 0.4231884057971015
+    },
+    "ratio_actual": 0.6152160272491591,
+    "ratio_target": 0.6,
+    "search": "vlm_asvd"
+  },
+  "7b/scienceqa/vlm_asvd-0.8": {
+    "accuracy": 0.5969261279127417,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7263392857142856,
+      "projector": 0.7,
+      "vision": 0.5485507246376812
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7263392857142856,
+      "projector": 0.7,
+      "vision": 0.5485507246376812
+    },
+    "ratio_actual": 0.8076590064353396,
+    "ratio_target": 0.8,
+    "search": "vlm_asvd"
+  },
+  "7b/scienceqa/vlm_atp-0.6": {
+    "accuracy": 0.6192364898363907,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7745454545454545,
+      "projector": 0.6,
+      "vision": 0.84
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7745454545454545,
+      "projector": 0.6,
+      "vision": 0.84
+    },
+    "ratio_actual": 0.7853153307108994,
+    "ratio_target": 0.6,
+    "search": "vlm_atp"
+  },
+  "7b/scienceqa/vlm_atp-0.8": {
+    "accuracy": 0.624194348041646,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8872727272727273,
+      "projector": 0.8,
+      "vision": 0.92
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.8872727272727273,
+      "projector": 0.8,
+      "vision": 0.92
+    },
+    "ratio_actual": 0.8925375807999848,
+    "ratio_target": 0.8,
+    "search": "vlm_atp"
+  },
+  "7b/scienceqa/vlm_mrcs-0.6": {
+    "accuracy": 0.6301437778879524,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 2449.5714285714284,
+      "projector": 1433.5,
+      "vision": 614.3333333333334
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 2449.5714285714284,
+      "projector": 1433.5,
+      "vision": 614.3333333333334
+    },
+    "ratio_actual": 0.9999480065418307,
+    "ratio_target": 0.6,
+    "search": "vlm_mrcs"
+  },
+  "7b/scienceqa/vlm_mrcs-0.8": {
+    "accuracy": 0.5954387704511651,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 1993.1205357142858,
+      "projector": 1035.0,
+      "vision": 439.30434782608694
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 1993.1205357142858,
+      "projector": 1035.0,
+      "vision": 439.30434782608694
+    },
+    "ratio_actual": 0.8078619403632175,
+    "ratio_target": 0.8,
+    "search": "vlm_mrcs"
+  },
+  "7b/scienceqa/vlm_svdllmv2-0.8": {
+    "accuracy": 0.601883986117997,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7920492924749851,
+      "projector": 0.7999999821186066,
+      "vision": 0.8129054951495018
+    },
+    "method": "?",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7920492924749851,
+      "projector": 0.7999999821186066,
+      "vision": 0.8129054951495018
+    },
+    "ratio_actual": 0.8008593157879496,
+    "ratio_target": 0.8,
+    "search": "vlm_svdllmv2"
+  },
+  "7b/seedbench/seed-baseline": {
+    "accuracy": 0.618,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": null,
+    "method": "fp16",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {},
+    "ratio_actual": null,
+    "ratio_target": 1.0,
+    "search": null
+  },
+  "7b/seedbench/seed-flat-0.6": {
+    "accuracy": 0.567,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.57179741714525,
+      "projector": 0.77734375,
+      "vision": 0.8838548855532551
+    },
+    "method": "flat",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5873530096340673,
+      "projector": 0.643701171875,
+      "vision": 0.8788107167119565
+    },
+    "ratio_actual": 0.6156467545673557,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/seedbench/seed-flat-0.8": {
+    "accuracy": 0.611,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7502109050180217,
+      "projector": 1.0,
+      "vision": 0.9178470231459362
+    },
+    "method": "flat",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7940556027110994,
+      "projector": 0.999951171875,
+      "vision": 0.9174061650815217
+    },
+    "ratio_actual": 0.8078185979464445,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/seedbench/seed-tower-0.6": {
+    "accuracy": 0.575,
+    "bias_params": {
+      "a_language": 0.6150736663320285,
+      "a_vision": 2.1103645984263366,
+      "g_language": 0.9726908733119095,
+      "g_vision": 0.024758606053455923
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.5686504333890434,
+      "projector": 0.7265625,
+      "vision": 0.8566678390047955
+    },
+    "method": "tower",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5889168773908071,
+      "projector": 0.562451171875,
+      "vision": 0.849747367527174
+    },
+    "ratio_actual": 0.6156574825042662,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "7b/seedbench/seed-tower-0.8": {
+    "accuracy": 0.6163333333333333,
+    "bias_params": {
+      "a_language": 2.9868185827934255,
+      "a_vision": 2.94826310317885,
+      "g_language": 0.0337910648539944,
+      "g_vision": 2.6572297039415638
+    },
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.7496946285089884,
+      "projector": 1.0,
+      "vision": 0.9262973967457663
+    },
+    "method": "tower",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7935919885190658,
+      "projector": 0.999951171875,
+      "vision": 0.9276813009510869
+    },
+    "ratio_actual": 0.807814538727073,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "7b/seedbench/seed-uniform-0.6": {
+    "accuracy": 0.43333333333333335,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "method": "uniform",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.6000027829501295,
+      "projector": 0.6001953125,
+      "vision": 0.6002604166666666
+    },
+    "ratio_actual": 0.6155190560732953,
+    "ratio_target": 0.6,
+    "search": "uniform"
+  },
+  "7b/seedbench/seed-uniform-0.8": {
+    "accuracy": 0.567,
+    "bias_params": null,
+    "calib_includes_answer": null,
+    "mean_ratio_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "method": "uniform",
+    "n": 3000,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7998957658678757,
+      "projector": 0.799755859375,
+      "vision": 0.7999674479166666
+    },
+    "ratio_actual": 0.8077201938724852,
+    "ratio_target": 0.8,
+    "search": "uniform"
+  },
+  "qwen/scienceqa/qwen-baseline": {
+    "accuracy": 0.8135845314823996,
+    "bias_params": null,
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": null,
+    "method": "fp16",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {},
+    "ratio_actual": null,
+    "ratio_target": 1.0,
+    "search": null
+  },
+  "qwen/scienceqa/qwen-flat-0.6": {
+    "accuracy": 0.7050074367873079,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.689941053312831,
+      "projector": 1.0,
+      "vision": 0.8753702799479167
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5732605480676523,
+      "projector": 0.9999540441176471,
+      "vision": 0.848486328125
+    },
+    "ratio_actual": 0.6525881578152833,
+    "ratio_target": 0.6,
+    "search": "tower_lems"
+  },
+  "qwen/scienceqa/qwen-flat-0.8": {
+    "accuracy": 0.8006941001487358,
+    "bias_params": {
+      "a_language": 0.0,
+      "a_vision": 0.0,
+      "g_language": 0.0,
+      "g_vision": 0.0,
+      "k_projector": 1.0,
+      "k_vision": 1.0
+    },
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.8200762938466838,
+      "projector": 1.0,
+      "vision": 0.9330647786458334
+    },
+    "method": "flat",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7871884666760405,
+      "projector": 0.9999540441176471,
+      "vision": 0.9187825520833334
+    },
+    "ratio_actual": 0.8262927224982205,
+    "ratio_target": 0.8,
+    "search": "tower_lems"
+  },
+  "qwen/scienceqa/qwen-uniform-0.6": {
+    "accuracy": 0.6623698562221121,
+    "bias_params": null,
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.6,
+      "projector": 0.6,
+      "vision": 0.6
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.5999103627671541,
+      "projector": 0.6000114889705882,
+      "vision": 0.5997395833333333
+    },
+    "ratio_actual": 0.6523522889931995,
+    "ratio_target": 0.6,
+    "search": "uniform"
+  },
+  "qwen/scienceqa/qwen-uniform-0.8": {
+    "accuracy": 0.8041646008924145,
+    "bias_params": null,
+    "calib_includes_answer": true,
+    "mean_ratio_by_tower": {
+      "language": 0.8,
+      "projector": 0.8,
+      "vision": 0.8
+    },
+    "method": "uniform",
+    "n": 2017,
+    "n_nonfinite": 0,
+    "param_weighted_by_tower": {
+      "language": 0.7999947272215973,
+      "projector": 0.8000804227941176,
+      "vision": 0.7998697916666667
+    },
+    "ratio_actual": 0.8260584669186938,
+    "ratio_target": 0.8,
+    "search": "uniform"
+  }
+}

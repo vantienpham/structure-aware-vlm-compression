@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: >-
+  Structure-Aware Global Rank Allocation for Low-Rank Compression of
+  Dual-Tower Vision-Language Models
+message: If you use this software or its results, please cite the paper.
+type: software
+authors:
+  - family-names: Pham
+    given-names: Van Tien
+  - family-names: Le
+    given-names: Thanh Trung
+repository-code: >-
+  https://github.com/vantienpham/structure-aware-vlm-compression
+license: MIT
+year: 2026
