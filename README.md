@@ -4,6 +4,10 @@ Code, experiment configurations and results for the paper of the same name.
 
 **Preprint:** [https://ssrn.com/abstract=7417408](https://ssrn.com/abstract=7417408)
 
+<p align="center" width="100%">
+    <img src="assets\pham2026structure.png" width="100%" height="100%">
+</p>
+
 Low-rank compression by truncated SVD becomes competitive when the rank budget
 is allocated across layers by measured sensitivity. Existing formulations
 assume a single homogeneous transformer stack, which vision-language models do
